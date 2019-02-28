@@ -43,7 +43,7 @@ np.histogram(exercise_ages, range = (20, 70), bins = 5)
 * Python will automatically calculate equally-sized bins based on the range and number of bins.
 * **Output:** First array is the counts for each bin. Second array includes the min & max for each bin
 
-### to graph histograms...
+### to graph histogram
 ```python
 from matplotlib import pyplot as plt
 
