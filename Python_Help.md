@@ -26,7 +26,7 @@ max = np.amax(array)
 range = max - min
 ```
 
-## find bin width
+### find bin width
 ```python
 bins = # number of bins u wanna have
 bin_width = (max-min + 1) / bins
