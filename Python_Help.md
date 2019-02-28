@@ -5,16 +5,24 @@ import pandas as pd
 ```
 
 ### import data from csv
-`transactions = pd.read_csv("transactions.csv")`
+```
+transactions = pd.read_csv("transactions.csv")
+```
 
 ### minimum
-`min = np.amin(array)`
+```
+min = np.amin(array)
+```
 
 ### maximum
-`max = np.amax(array)`
+```
+max = np.amax(array)
+```
 
 ### range
-`range = max - min`
+```
+range = max - min
+```
 
 ## find bin width
 ```
@@ -24,7 +32,9 @@ bin_width = (range + 1) / bins
 ```
 
 ### histogram function
-`np.histogram(exercise_ages, range = (20, 70), bins = 5)`
+```
+np.histogram(exercise_ages, range = (20, 70), bins = 5)
+```
 * `exercise_ages` is the input array
 * `range = (20, 70)` is the range of values we expect in our array.
 * Range includes everything from 20, up until but not including 70.
