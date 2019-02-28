@@ -2,6 +2,8 @@
 ```
 import numpy as np
 import pandas as pd
+from matplotlib import pyplot as plt
+from scipy import stats
 ```
 
 ## Histograms
@@ -45,8 +47,6 @@ np.histogram(exercise_ages, range = (20, 70), bins = 5)
 
 ### to graph histogram
 ```python
-from matplotlib import pyplot as plt
-
 plt.hist(exercise_ages, range = (20, 70), bins = 5, edgecolor='black')
 plt.title("Decade Frequency")
 plt.xlabel("Ages")
@@ -54,4 +54,68 @@ plt.ylabel("Count")
 plt.show()
 ```
 
+# Mean, etc.
+
+### average
+```python
+average = np.average(array)
+```
+
+### median
+```python
+median = np.median(array)
+```
+
+### mode
+* If there are two modes, the `stats.mode()` method will always return the smallest mode in the dataset.
+* The result of `stats.mode()` is an object with the smallest mode value, and its count.
+```python
+mode = stats.mode(array)
+```
+
+### example of plotting all three
+```python
+# Plot the figure
+plt.hist(author_ages, range=(10, 80), bins=14,  edgecolor='black')
+plt.title("Author Ages at Publication")
+plt.xlabel("Publication Age")
+plt.ylabel("Count")
+plt.axvline(average_age, color='r', linestyle='solid', linewidth=3, label="Mean")
+plt.axvline(median_age, color='y', linestyle='dotted', linewidth=3, label="Median")
+plt.axvline(mode_age, color='orange', linestyle='dashed', linewidth=3, label="Mode")
+plt.legend()
+
+plt.show()
+```
+
+### variance
+```python
+variance = np.var(dataset)
+```
+
+### standard deviation
+```python
+stddev = np.var(dataset) ** 0.5 # Take the square root
+```
+or
+```python
+stddev = np.std(dataset)
+```
+
+### find num of stddevs away from the mean
+```python
+my_height = 80
+nba_mean = np.mean(nba_data)
+nba_standard_deviation = np.std(nba_data)
+nba_difference = my_height - nba_mean
+num_nba_deviations = nba_difference / nba_standard_deviation
+```
+
+# Seeing Raw Data
+
+### print a few lines of data
+```python
+print(london_data.head()) # Print first few lines
+print(london_data.iloc[100:200]) # Print lines 100-199
+```
 
