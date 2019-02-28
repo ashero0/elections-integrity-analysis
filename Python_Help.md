@@ -4,35 +4,36 @@ import numpy as np
 import pandas as pd
 ```
 
+## Histograms
+
 ### import data from csv
-```
+```python
 transactions = pd.read_csv("transactions.csv")
 ```
 
 ### minimum
-```
+```python
 min = np.amin(array)
 ```
 
 ### maximum
-```
+```python
 max = np.amax(array)
 ```
 
 ### range
-```
+```python
 range = max - min
 ```
 
 ## find bin width
-```
-bins = # of bins u wanna have
-bin_width = (range + 1) / bins
-= (max-min + 1) / bins
+```python
+bins = # number of bins u wanna have
+bin_width = (max-min + 1) / bins
 ```
 
 ### histogram function
-```
+```python
 np.histogram(exercise_ages, range = (20, 70), bins = 5)
 ```
 * `exercise_ages` is the input array
@@ -43,7 +44,7 @@ np.histogram(exercise_ages, range = (20, 70), bins = 5)
 * **Output:** First array is the counts for each bin. Second array includes the min & max for each bin
 
 ### to graph histograms...
-```
+```python
 from matplotlib import pyplot as plt
 
 plt.hist(exercise_ages, range = (20, 70), bins = 5, edgecolor='black')
